@@ -39,6 +39,7 @@ namespace StoryWriter.DockingWindows
             this.TvwChapters.Name = "TvwChapters";
             this.TvwChapters.Size = new System.Drawing.Size(800, 450);
             this.TvwChapters.TabIndex = 0;
+            this.TvwChapters.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.TvwChapters_AfterSelect);
             // 
             // ChapterWindow
             // 

@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 
 namespace StoryWriter.Storage
@@ -8,7 +7,6 @@ namespace StoryWriter.Storage
     {
         public string Name { get; private set; }
         public string Author { get; private set; }
-        public DateTime DateCreated { get; private set; }
         public string Description { get; private set; }
         public List<Chapter> Chapters { get; private set; }
 
@@ -17,7 +15,6 @@ namespace StoryWriter.Storage
             Name = name;
             Author = author;
             Description = "None";
-            DateCreated = DateTime.Now;
             Chapters = new List<Chapter>();
         }
 
@@ -30,6 +27,13 @@ namespace StoryWriter.Storage
         {
             string json = JsonConvert.SerializeObject(this, Formatting.Indented);
             return json;
+        }
+
+        public void UpdateChapter(Chapter updatedChapter)
+        {
+            foreach (Chapter chapter in Chapters)
+                if (chapter == updatedChapter)
+                    chapter.Lines = updatedChapter.Lines;
         }
     }
 }

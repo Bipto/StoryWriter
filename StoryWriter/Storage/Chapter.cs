@@ -2,12 +2,12 @@
 {
     public class Chapter
     {
-        public string Name { get; }
-        public string[] Lines { get; }
+        public string Title { get; }
+        public string[] Lines { get; set; }
 
         public Chapter(string title)
         {
-            Name = title;
+            Title = title;
         }
     }
 }
